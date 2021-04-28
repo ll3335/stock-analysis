@@ -20,15 +20,16 @@ From those tables, we can found that the overall stock performance in 2017 was m
 The images below illustrate the running time for our original code for both 2017 and 2018.
 <img width="587" alt="VBA_Challenge_2017_Original" src="https://user-images.githubusercontent.com/82549066/116475595-10ecd400-a848-11eb-9a27-f8de4020d19c.png">
 
-<img width="669" alt="VBA_Challenge_2018_Original" src="https://user-images.githubusercontent.com/82549066/116475603-13e7c480-a848-11eb-857d-b1aa73d39494.png">
+<img width="587" alt="VBA_Challenge_2018_Original" src="https://user-images.githubusercontent.com/82549066/116475603-13e7c480-a848-11eb-857d-b1aa73d39494.png">
 
 The images below illustrate the running time for our refactoring code for both 2017 and 2018.
-<img width="838" alt="VBA_Challenge_2017" src="https://user-images.githubusercontent.com/82549066/116475652-2661fe00-a848-11eb-8dfe-ae24ef44ea88.png">
+<img width="587" alt="VBA_Challenge_2017" src="https://user-images.githubusercontent.com/82549066/116475652-2661fe00-a848-11eb-8dfe-ae24ef44ea88.png">
 
-<img width="609" alt="VBA_Challenge_2018" src="https://user-images.githubusercontent.com/82549066/116475657-295cee80-a848-11eb-9ae9-076c3883361e.png">
+<img width="587" alt="VBA_Challenge_2018" src="https://user-images.githubusercontent.com/82549066/116475657-295cee80-a848-11eb-9ae9-076c3883361e.png">
 
 From those images, we can see that the running time becomes shorter for our refactoring codes by around 0.20312505 seconds for both 2017 and 2018. A variable called tickerIndex was created in our refactoring code for 4 different arrays-tickers, tickerVolumes, tickerStartingPrices and tickerEndingPrices. This allows to assign tickers, tickerVolumes, tickerSatrtingPrices and tickerEndingPrices to each stock before iterating and saves the running time. Detaied original code and refactoring code can be found below.
-####Original Code
+
+Original Code
 Sub yearValueAnalysis()
 Dim startTime As Single
 Dim endTime  As Single
@@ -103,7 +104,8 @@ endTime = Timer
     
 End Sub
 
-####Refacting Code
+
+Refacting Code
 Sub AllStocksAnalysisRefactored()
     Dim startTime As Single
     Dim endTime  As Single
