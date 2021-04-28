@@ -5,6 +5,7 @@ This analysis aims at analyzing the entire dataset of each year's stock performa
 
 
 
+
 ## Results
 ### Stock Performance
 The images below are stock performance for the year of 2017 and 2018.
@@ -30,6 +31,7 @@ The images below illustrate the running time for our refactoring code for both 2
 From those images, we can see that the running time becomes shorter for our refactoring codes by around 0.20312505 seconds for both 2017 and 2018. A variable called tickerIndex was created in our refactoring code for 4 different arrays-tickers, tickerVolumes, tickerStartingPrices and tickerEndingPrices. This allows to assign tickers, tickerVolumes, tickerSatrtingPrices and tickerEndingPrices to each stock before iterating and saves the running time. Detaied original code and refactoring code can be found below.
 
 Original Code
+
 Sub yearValueAnalysis()
 Dim startTime As Single
 Dim endTime  As Single
@@ -106,6 +108,7 @@ End Sub
 
 
 Refacting Code
+
 Sub AllStocksAnalysisRefactored()
     Dim startTime As Single
     Dim endTime  As Single
@@ -227,6 +230,7 @@ Sub AllStocksAnalysisRefactored()
     MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
 
 End Sub
+
 
 
 
