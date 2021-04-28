@@ -32,51 +32,51 @@ From those images, we can see that the running time becomes shorter for our refa
 
 Original Code
 
-Sub yearValueAnalysis()
-Dim startTime As Single
-Dim endTime  As Single
-yearValue = InputBox("What year would you like to run the analysis on?")
+    Sub yearValueAnalysis()
+    Dim startTime As Single
+    Dim endTime  As Single
+    yearValue = InputBox("What year would you like to run the analysis on?")
 
-startTime = Timer
+    startTime = Timer
 
-'1) Format the output sheet on All Stocks Analysis worksheet
-Worksheets("All Stock Analysis").Activate
+    '1) Format the output sheet on All Stocks Analysis worksheet
+    Worksheets("All Stock Analysis").Activate
 
-Range("A1").Value = "All Stocks (" + yearValue + ")"
+    Range("A1").Value = "All Stocks (" + yearValue + ")"
 
-'Add Headers
-Cells(3, 1).Value = "Ticker"
-Cells(3, 2).Value = "Total Daily Volume"
-Cells(3, 3).Value = "Return"
+    'Add Headers
+    Cells(3, 1).Value = "Ticker"
+    Cells(3, 2).Value = "Total Daily Volume"
+    Cells(3, 3).Value = "Return"
 
-'2) Initialize array of all tickers
-Dim tickers(12) As String
+    '2) Initialize array of all tickers
+    Dim tickers(12) As String
 
-tickers(0) = "AY"
-tickers(1) = "CSIQ"
-tickers(2) = "DQ"
-tickers(3) = "ENPH"
-tickers(4) = "FSLR"
-tickers(5) = "HASI"
-tickers(6) = "JKS"
-tickers(7) = "RUN"
-tickers(8) = "SEDG"
-tickers(9) = "SPWR"
-tickers(10) = "TERP"
-tickers(11) = "VSLR"
+    tickers(0) = "AY"
+    tickers(1) = "CSIQ"
+    tickers(2) = "DQ"
+    tickers(3) = "ENPH"
+    tickers(4) = "FSLR"
+    tickers(5) = "HASI"
+    tickers(6) = "JKS"
+    tickers(7) = "RUN"
+    tickers(8) = "SEDG"
+    tickers(9) = "SPWR"
+    tickers(10) = "TERP"
+    tickers(11) = "VSLR"
 
-'3a) Initialize variables for starting price and ending price
-Dim startingPrice As Double
-Dim endingPrice As Double
-'3b) Activate data worksheet
-Worksheets(yearValue).Activate
-'3c) Get the number of rows to loop over
-RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+    '3a) Initialize variables for starting price and ending price
+    Dim startingPrice As Double
+    Dim endingPrice As Double
+    '3b) Activate data worksheet
+    Worksheets(yearValue).Activate
+    '3c) Get the number of rows to loop over
+    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
 
-'4) Loop through tickers
-For i = 0 To 11
-    ticker = tickers(i)
-    totalVolume = 0
+    '4) Loop through tickers
+    For i = 0 To 11
+        ticker = tickers(i)
+        totalVolume = 0
     '5) loop through rows in the data
     Worksheets(yearValue).Activate
     For j = 2 To RowCount
@@ -99,17 +99,17 @@ For i = 0 To 11
         Cells(4 + i, 2).Value = totalVolume
         Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
 
-Next i
+    Next i
 
-endTime = Timer
-    MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
+    endTime = Timer
+        MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
     
-End Sub
+    End Sub
 
 
 Refacting Code
 
-Sub AllStocksAnalysisRefactored()
+    Sub AllStocksAnalysisRefactored()
     Dim startTime As Single
     Dim endTime  As Single
 
@@ -229,7 +229,7 @@ Sub AllStocksAnalysisRefactored()
     endTime = Timer
     MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
 
-End Sub
+    End Sub
 
 
 
